@@ -6,7 +6,7 @@ import {
     ERROR
 } from '../actions/movieLists'
 
-const initialState = []
+const initialState = {}
 
 export default function (state = initialState, action) {
     switch (action.type) {

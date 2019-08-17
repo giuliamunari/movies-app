@@ -10,39 +10,41 @@ export const LOAD_TV_SUCCESS = 'LOAD_TV_SUCCESS'
 export const ERROR = 'ERROR'
 
 function errorAction(error) {
+    const text = error.response.body.status_message
+    const status = error.status
     return {
         type: ERROR,
-        payload: {error}
+        payload: { error : { status, text } }
     }
 }
 
-export function getDocumentaries () {
+export function getDocumentaries() {
     const url = `${baseUrl}/discover/movie?api_key=${apiKey}&language=en-US&with_genres=99&sort_by=vote_average.desc&vote_count.gte=10`
     return async function (dispatch) {
         try {
             const response = await request(url)
-            const {results} = response.body
+            const { results } = response.body
             dispatch({
                 type: LOAD_DOCUMENTARIES_SUCCESS,
-                payload: {documentaries: results}
+                payload: { 'Documentary': results }
             })
         }
         catch (error) {
-            console.log(error)
+            
             dispatch(errorAction(error))
         }
     }
 }
 
-export function getFamily () {
+export function getFamily() {
     const url = `${baseUrl}/discover/movie?api_key=${apiKey}&language=en-US&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=10`
     return async function (dispatch) {
         try {
             const response = await request(url)
-            const {results} = response.body
+            const { results } = response.body
             dispatch({
                 type: LOAD_FAMILY_SUCCESS,
-                payload: {familyMovies: results}
+                payload: { 'Family': results }
             })
         }
         catch (error) {
@@ -57,10 +59,10 @@ export function getPopularMovies() {
     return async function (dispatch) {
         try {
             const response = await request(url)
-            const {results} = response.body
+            const { results } = response.body
             dispatch({
                 type: LOAD_MOVIES_SUCCESS,
-                payload: {popularMovies: results}
+                payload: { 'Popular movies': results }
             })
         }
         catch (error) {
@@ -71,14 +73,14 @@ export function getPopularMovies() {
 }
 
 export function getPopularTv() {
-    const url = `${baseUrl}/discover/tv?api_key=${apiKey}&language=en-US&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=10`
+    const url = `${baseUrl}/discoverlala/tv?api_key=${apiKey}&language=en-US&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=10`
     return async function (dispatch) {
         try {
             const response = await request(url)
-            const {results} = response.body
+            const { results } = response.body
             dispatch({
                 type: LOAD_TV_SUCCESS,
-                payload: {popularTv: results}
+                payload: { 'Popular series': results }
             })
         }
         catch (error) {
