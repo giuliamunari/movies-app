@@ -12,7 +12,6 @@ class DashboardContainer extends Component {
         this.props.getDocumentaries()
     }
     render() {
-        //console.log(this.props.media)
         return (
             <div className='container'>
                 <h1>Movies App</h1>
@@ -20,7 +19,7 @@ class DashboardContainer extends Component {
                 {this.props.media &&
                     Object.keys(this.props.media).map((key, index) => {
                         if (key !== 'error') return <Carousel key={index} data={this.props.media[key]} title={key} />
-                        return <p>{`${this.props.media[key]}`}</p>
+                        return <p key={index}>{`${this.props.media[key].text}`}</p>
                     })
                 }
             </div>
