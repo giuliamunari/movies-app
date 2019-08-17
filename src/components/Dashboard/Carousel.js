@@ -30,7 +30,9 @@ export default function Carousel(props) {
                 slidesToShow={5}
                 scrollOnDevice={true}
             >
-                {props.data.map((item, index) => <div key={index}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /></div>)}
+                {props.data.map((item, index) =>
+                    <div key={index}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /></div>
+                )}
             </InfiniteCarousel>
         </div>
     )
