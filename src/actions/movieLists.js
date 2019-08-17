@@ -55,7 +55,7 @@ export function getFamily() {
 }
 
 export function getPopularMovies() {
-    const url = `${baseUrl}/discover/movie?api_key=${apiKey}&language=en-US&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=10`
+    const url = `${baseUrl}/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`
     return async function (dispatch) {
         try {
             const response = await request(url)
@@ -73,7 +73,7 @@ export function getPopularMovies() {
 }
 
 export function getPopularTv() {
-    const url = `${baseUrl}/discover/tv?api_key=${apiKey}&language=en-US&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=10`
+    const url = `${baseUrl}/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`
     return async function (dispatch) {
         try {
             const response = await request(url)
