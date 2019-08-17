@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import Dashboard from './Dashboard';
 import { connect } from 'react-redux'
-import {getListMedia} from '../../actions/movieLists'
+import { getPopularMovies, getPopularTv, getFamily, getDocumentaries } from '../../actions/movieLists'
 
 class DashboardContainer extends Component {
-    componentDidMount(){
-        this.props.getListMedia('movie', 'popular')
+    componentDidMount() {
+        this.props.getPopularMovies()
+        this.props.getPopularTv()
+        this.props.getFamily()
+        this.props.getDocumentaries()
     }
     render() {
         return (
@@ -15,9 +18,9 @@ class DashboardContainer extends Component {
         )
     }
 }
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
-
+        
     }
 }
-export default connect(mapStateToProps, {getListMedia})(DashboardContainer)
+export default connect(mapStateToProps, { getPopularMovies, getPopularTv, getFamily, getDocumentaries })(DashboardContainer)
