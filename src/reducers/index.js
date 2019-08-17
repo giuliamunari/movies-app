@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import movies from './movies'
+import lists from './lists'
 
 export default combineReducers ({
-    movies
+    lists
 })
