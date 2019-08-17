@@ -19,7 +19,6 @@ export function getDocumentaries() {
             })
         }
         catch (error) {
-            console.log(error)
             dispatch(errorAction(error))
         }
     }
@@ -37,15 +36,12 @@ export function getFamily() {
             })
         }
         catch (error) {
-            console.log(error)
             dispatch(errorAction(error))
         }
     }
 }
 
 export function getPopularMovies() {
-    ///tv/popular
-   // const url = `${baseUrl}/discover/movie?api_key=${apiKey}&${languageUrl}&sort_by=popularity.desc`
     const url = `${baseUrl}/movie/popular?api_key=${apiKey}&${languageUrl}`
     return async function (dispatch) {
         try {
@@ -57,7 +53,6 @@ export function getPopularMovies() {
             })
         }
         catch (error) {
-            console.log(error)
             dispatch(errorAction(error))
         }
     }
@@ -75,7 +70,6 @@ export function getPopularTv() {
             })
         }
         catch (error) {
-            console.log(error)
             dispatch(errorAction(error))
         }
     }
