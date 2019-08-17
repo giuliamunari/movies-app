@@ -7,9 +7,9 @@ import DetailContainer from './Detail/DetailContainer';
 
 function Routes() {
   return (
-    <div>
+    <div className='lalal'>
          <Route path="/" exact component={DashboardContainer} />
-         <Route path='/media/:id' exact component={DetailContainer} />
+         <Route path='/:type/:id' exact component={DetailContainer} />
     </div>
   )
 }

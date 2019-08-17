@@ -1,10 +1,11 @@
 import {
     LOAD_MOVIES_SUCCESS,
-    LOAD_DOCUMENTARIES_SUCCESS,
-    LOAD_FAMILY_SUCCESS,
     LOAD_TV_SUCCESS,
-    ERROR
+    LOAD_FAMILY_SUCCESS,
+    LOAD_DOCUMENTARIES_SUCCESS
 } from '../actions/movieLists'
+
+import {ERROR} from '../actions/errorApi'
 
 const initialState = {}
 

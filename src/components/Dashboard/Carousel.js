@@ -1,5 +1,6 @@
 import React from 'react'
 import InfiniteCarousel from 'react-leaf-carousel'
+import { Link } from 'react-router-dom'
 import { baseImgUrl } from '../../constants'
 export default function Carousel(props) {
     return (
@@ -31,7 +32,7 @@ export default function Carousel(props) {
                 scrollOnDevice={true}
             >
                 {props.data.map((item, index) =>
-                    <div key={index}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /></div>
+                    <div key={index}><Link to={`/${props.type}/${item.id}`}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /></Link></div>
                 )}
             </InfiniteCarousel>
         </div>
