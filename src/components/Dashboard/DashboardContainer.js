@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import Dashboard from './Dashboard';
+import Carousel from './Carousel'
 import { connect } from 'react-redux'
 import { getPopularMovies, getPopularTv, getFamily, getDocumentaries } from '../../actions/movieLists'
+import Loader from '../Loader/Loader'
 
 class DashboardContainer extends Component {
     componentDidMount() {
@@ -12,15 +13,20 @@ class DashboardContainer extends Component {
     }
     render() {
         return (
-            <div>
-                <Dashboard />
+            <div className='container'>
+                <h1>Movies App</h1>
+                {!this.props.media && <Loader />}
+                {this.props.media &&
+                    Object.keys(this.props.media).map((key, index) => {
+                        if (key !== 'error') return <Carousel key={index} data={this.props.media[key]} title={key} />
+                        return <p key={index}>{`${this.props.media[key].text}`}</p>
+                    })
+                }
             </div>
         )
     }
 }
 function mapStateToProps(state) {
-    return {
-        
-    }
+    return { media: state.lists }
 }
 export default connect(mapStateToProps, { getPopularMovies, getPopularTv, getFamily, getDocumentaries })(DashboardContainer)
