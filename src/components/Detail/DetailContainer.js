@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import Loader from '../Loader/Loader'
 
 class DetailContainer extends Component {
+    id = parseInt(this.props.match.params.id)
     componentDidMount() {
-
+       
     }
     render() {
         return (
@@ -16,7 +17,7 @@ class DetailContainer extends Component {
 }
 function mapStateToProps(state) {
     return {
-        
+
     }
 }
 export default connect (mapStateToProps)(DetailContainer)

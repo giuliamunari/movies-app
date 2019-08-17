@@ -17,9 +17,9 @@ class DashboardContainer extends Component {
                 <h1>Movies App</h1>
                 {!this.props.media && <Loader />}
                 {this.props.media &&
-                    Object.keys(this.props.media).map((key, index) => {
-                        if (key !== 'error') return <Carousel key={index} data={this.props.media[key]} title={key} />
-                        return <p key={index}>{`${this.props.media[key].text}`}</p>
+                    Object.keys(this.props.media).sort().map((key) => { 
+                        if (key !== 'error') return <Carousel key={key} data={this.props.media[key].results} title={this.props.media[key].title} />
+                        return <p key='0'>{`${this.props.media[key].text}`}</p>
                     })
                 }
             </div>
