@@ -38,12 +38,14 @@ export default class VideoPlayerContainer extends Component {
 
 		// Try to load a manifest.
 		
-		try {
-			player.load(this.manifestUri)
-		}
-		catch (error) {
-			this.onError(error)
-		}
+			try {
+				player.load(this.manifestUri)
+			}
+			catch (error) {
+				this.onError(error)
+			}
+		
+		
 		// player.load(this.manifestUri).then(function () {
 		// 	// This runs if the asynchronous load is successful.
 		// 	console.log('The video has now been loaded!');
