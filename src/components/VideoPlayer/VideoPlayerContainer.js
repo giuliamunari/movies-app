@@ -4,11 +4,6 @@ import { Replay } from 'vimond-replay';
 import 'vimond-replay/index.css';
 import 'vimond-replay/index.css';
 import CompoundVideoStreamer from 'vimond-replay/video-streamer/compound';
-// import Loader from '../Loader/Loader'
-// import VideoPlayer from './VideoPlayer';
-
-//import playlist from './playlist.m3u8'
-
 
 class VideoPlayerContainer extends Component {
 
@@ -17,36 +12,36 @@ class VideoPlayerContainer extends Component {
     componentDidMount() {
 
     }
-   replayOptions = {
+    replayOptions = {
         videoStreamer: {
-          hlsjs: {
-            customConfiguration: {
-              capLevelToPlayerSize: true,
-              maxBufferLength: 45
+            hlsjs: {
+                customConfiguration: {
+                    capLevelToPlayerSize: true,
+                    maxBufferLength: 45
+                }
+            },
+            shaka: {
+                customConfiguration: {
+                    streaming: {
+                        bufferingGoal: 120
+                    }
+                }
             }
-          },
-          shaka: {
-            customConfiguration: {
-              streaming: {
-                bufferingGoal: 120
-              }
-            }
-          }
         }
-      };
-      
+    };
+
     render() {
         return (
-           <div>
+            <div>
                 <Replay
-  source={{
-    streamUrl: './playlist.m3u8',
-    contentType: 'application/x-mpegurl',
-  }}
-  initialPlaybackProps={{ isPaused: true }}
->
-  <CompoundVideoStreamer />
-</Replay>
+                    source={{
+                        streamUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+                        contentType: 'application/x-mpegurl',
+                    }}
+                    initialPlaybackProps={{ isPaused: true }}
+                >
+                    <CompoundVideoStreamer />
+                </Replay>
             </div>
         )
     }
