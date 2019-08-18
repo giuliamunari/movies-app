@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import 'mux.js'
+import mux from 'mux'
 import { connect } from 'react-redux'
 import Hls from "hls.js"
 
