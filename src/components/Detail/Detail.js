@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { baseImgUrl } from '../../constants'
 export default function Detail(props) {
     const {
+        id,
         title,
         overview,
         genres,
@@ -38,6 +40,9 @@ export default function Detail(props) {
                         <li>
                             <h4>Production countries</h4>
                             <p>{production_countries.map((country, index) => <span key={index}>{country.name + ' '}</span>)}</p>
+                        </li>
+                        <li>
+                           <Link to={`/${props.type}/${id}/player`} className='button'>Play now</Link>
                         </li>
                     </ul>
                 </div>

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "hls.js": "^0.12.4",
     "mux": "0.0.2",
     "mux.js": "^5.1.3",
+    "muxjs": "^2.4.18",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-leaf-carousel": "^1.2.2",
