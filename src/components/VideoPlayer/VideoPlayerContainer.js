@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Replay } from 'vimond-replay';
 import 'vimond-replay/index.css';
-import 'vimond-replay/index.css';
 import CompoundVideoStreamer from 'vimond-replay/video-streamer/compound';
 
 class VideoPlayerContainer extends Component {
@@ -38,7 +37,6 @@ class VideoPlayerContainer extends Component {
                         streamUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
                         contentType: 'application/x-mpegurl',
                     }}
-                    initialPlaybackProps={{ isPaused: true }}
                 >
                     <CompoundVideoStreamer />
                 </Replay>
