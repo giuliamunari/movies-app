@@ -12,8 +12,8 @@
     "react-scripts": "3.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "shaka-player": "^2.5.4",
-    "superagent": "^5.1.0"
+    "superagent": "^5.1.0",
+    "vimond-replay": "^1.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
