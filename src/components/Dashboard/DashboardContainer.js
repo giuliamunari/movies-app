@@ -11,6 +11,7 @@ class DashboardContainer extends Component {
         this.props.getFamily()
         this.props.getDocumentaries()
     }
+
     render() {
         return (
             <div className='container'>
