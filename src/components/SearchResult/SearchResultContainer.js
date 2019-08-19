@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import SearchResult from './SearchResult';
 import { connect } from 'react-redux'
 import { search } from '../../actions/searchResults'
+import Error from '../Error/Error'
 
 class SearchResultContainer extends Component {
-
     componentDidMount() {
         this.loadResults()
     }
@@ -21,7 +21,9 @@ class SearchResultContainer extends Component {
                 {(this.props.searchResults && this.props.searchResults.total_results > 0) &&
                     <SearchResult data={this.props.searchResults.results} type={this.type} query={this.query} />
                 }
-
+                {this.props.error &&
+                    <Error error={this.props.error} />
+                }
             </div>
         )
     }

@@ -5,6 +5,8 @@ import 'vimond-replay/index.css';
 import muxjs from 'mux.js'
 import ShakaVideoStreamer from 'vimond-replay/video-streamer/shaka-player';
 import { getMedia } from '../../actions/media'
+import Error from '../Error/Error'
+
 class VideoPlayerContainer extends Component {
     id = parseInt(this.props.match.params.id)
     type = this.props.match.params.type
@@ -27,7 +29,11 @@ class VideoPlayerContainer extends Component {
         return (
             <div>
 				{this.props.mediaItem && 
-				<h1>{this.props.mediaItem.title}</h1>}
+                <h1>{this.props.mediaItem.title}</h1>}
+                
+                {this.props.error &&
+                    <Error error={this.props.error} />
+                }
                 <Replay
                     source={{
                         streamUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',

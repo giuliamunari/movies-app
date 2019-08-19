@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getMedia } from '../../actions/media'
 import Loader from '../Loader/Loader'
 import Detail from './Detail';
+import Error from '../Error/Error'
 
 class DetailContainer extends Component {
     id = parseInt(this.props.match.params.id)
@@ -14,10 +15,7 @@ class DetailContainer extends Component {
         return (
             <div className='container'>
                 {this.props.error &&
-                    <div>
-                        <h1>{this.props.error.status}</h1>
-                        <h2>{this.props.error.text}</h2>
-                    </div>
+                    <Error error={this.props.error} />
                 }
                 {(!this.props.mediaItem && !this.props.error) && <Loader />}
                 {this.props.mediaItem && <Detail mediaItem={this.props.mediaItem} type={this.type}/>}
