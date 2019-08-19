@@ -5,13 +5,18 @@ import { connect } from 'react-redux'
 import DashboardContainer from './Dashboard/DashboardContainer';
 import DetailContainer from './Detail/DetailContainer';
 import VideoPlayerContainer from './VideoPlayer/VideoPlayerContainer';
+import NavBarContainer from './NavBar/NavBarContainer';
+import SearchResultContainer from './SearchResult/SearchResultContainer';
 
 function Routes() {
   return (
+
     <div className='mainContainer'>
-         <Route path="/" exact component={DashboardContainer} />
-         <Route path='/:type/:id' exact component={DetailContainer} />
-         <Route path='/:type/:id/player' exact component={VideoPlayerContainer} />
+      <NavBarContainer />
+      <Route path="/" exact component={DashboardContainer} />
+      <Route path='/:type/:id' exact component={DetailContainer} />
+      <Route path='/:type/:id/player' exact component={VideoPlayerContainer} />
+      <Route path='/search' exact component={SearchResultContainer} />
     </div>
   )
 }
