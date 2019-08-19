@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SearchBar from './SearchBar';
-
+import {connect} from 'react-redux'
 class SearchBarContainer extends Component {
     state = { type: 'movie', query: '', errorForm: '' }
     optionsMedia = ['movie', 'tv']
@@ -9,9 +9,12 @@ class SearchBarContainer extends Component {
         event.preventDefault()
         if (this.state.query !== '') {
             this.setState({ query: '', errorForm: '' })
-            return this.props.history.push(`/${this.state.type}/${this.state.query}`)
+            return this.loadResultPage(this.state.type, this.state.query)
         }
-        else return this.setState({ errorForm: 'You need to add some keywords' })
+        else return this.setState({errorForm: 'You need to add some keywords' })
+    }
+    loadResultPage = (type, query) => {
+        return this.props.history.push(`/${type}/${query}`)
     }
     onChange = (event) => {
         this.setState({
@@ -33,4 +36,4 @@ class SearchBarContainer extends Component {
     }
 }
 
-export default SearchBarContainer
+export default connect()(SearchBarContainer)
