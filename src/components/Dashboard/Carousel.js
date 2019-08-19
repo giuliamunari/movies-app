@@ -35,7 +35,7 @@ export default function Carousel(props) {
                 responsive={true}
             >
                 {props.data.map((item, index) =>
-                    <div key={index}><Link to={`/${props.type}/${item.id}`}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /></Link></div>
+                    <div key={index}><Link to={`/detail/${props.type}/${item.id}`}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /><p>{item.title}</p></Link></div>
                 )}
             </InfiniteCarousel>
         </div>

@@ -1,11 +1,11 @@
 import * as request from 'superagent'
 import { baseUrl, apiKey, languageUrl } from '../constants'
+import { errorAction } from './errorApi'
 
 export const SEARCH_MEDIA_SUCCESS = 'SEARCH_MEDIA_SUCCESS'
-export function search(query) {
-    //http https://api.themoviedb.org/3/search/multi\?apiKey\=d33e3147fea38743d6c89fcd607646d5\&query\='old gun'
-    const url = `${baseUrl}/search/multi?api_key=${apiKey}&${languageUrl}&query=${encodeURIComponent(query)}`
-    console.log(url)
+export function search(type, query) {
+    //https://api.themoviedb.org/3/search/multi?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
+    const url = `${baseUrl}/search/${type}?api_key=${apiKey}&${languageUrl}&query=${query}&include_adult=false`
     return async function (dispatch) {
         try {
             const response = await request(url)
@@ -16,7 +16,7 @@ export function search(query) {
             })
         }
         catch (error) {
-           console.log(error)
+            dispatch(errorAction(error))
         }
     }
 }

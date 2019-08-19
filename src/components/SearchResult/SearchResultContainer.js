@@ -2,23 +2,34 @@ import React, { Component } from 'react'
 import SearchResult from './SearchResult';
 import { connect } from 'react-redux'
 import { search } from '../../actions/searchResults'
+
 class SearchResultContainer extends Component {
-    query = this.props.match.params.query
+
     componentDidMount() {
-        this.props.search(this.query)
+        this.loadResults()
     }
+    componentDidUpdate() {
+        this.loadResults()
+    }
+    loadResults = () => this.props.search(this.props.match.params.type, this.props.match.params.query)
     render() {
         return (
             <div className='container'>
-                <h1>lalal</h1>
-                <SearchResult />
+                {(this.props.searchResults && this.props.searchResults.total_results === 0) &&
+                    <h1>No items found for {this.query}</h1>
+                }
+                {(this.props.searchResults && this.props.searchResults.total_results > 0) &&
+                    <SearchResult data={this.props.searchResults.results} type={this.type} query={this.query} />
+                }
+
             </div>
         )
     }
 }
 function mapStateToProps(state) {
+    const { searchResults, error } = state.search
     return {
-
+        searchResults, error
     }
 }
 export default connect(mapStateToProps, { search })(SearchResultContainer)
