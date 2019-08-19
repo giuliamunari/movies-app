@@ -1,3 +1,6 @@
+/**
+ * component rendering errors in different components
+ */
 import React from 'react'
 
 export default function Error(props) {

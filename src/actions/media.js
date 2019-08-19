@@ -1,3 +1,7 @@
+/**
+ * Action used to load a specific media 
+ */
+
 import * as request from 'superagent'
 import { baseUrl, apiKey, languageUrl } from '../constants'
 import { errorAction } from './errorApi'

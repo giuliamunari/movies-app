@@ -1,3 +1,6 @@
+/**
+ * component rendering a dashboard of movies and Tv shows categories
+ */
 import React, { Component } from 'react'
 import Carousel from './Carousel'
 import { connect } from 'react-redux'
@@ -17,8 +20,10 @@ class DashboardContainer extends Component {
             <div className='container'>
                 <h1>Movies App</h1>
                 {!this.props.media && <Loader />}
-
-                {this.props.media &&
+               
+                {
+                    // orders the categories of media and for each one renders a carousel or an error
+                    this.props.media &&
                     Object.keys(this.props.media).sort().map((key) => { 
                         if (key !== 'error') return <Carousel 
                             key={key} 

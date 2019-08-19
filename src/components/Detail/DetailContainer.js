@@ -1,3 +1,6 @@
+/**
+ * component rendering the details of a selected movie or tv show
+ */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getMedia } from '../../actions/media'

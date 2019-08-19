@@ -1,10 +1,14 @@
+/**
+ * component that renders each detail of an item
+ */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { baseImgUrl } from '../../constants'
 export default function Detail(props) {
     const {
         id,
-        title,
+        title, 
+        name,
         overview,
         genres,
         release_date,
@@ -12,10 +16,12 @@ export default function Detail(props) {
         production_countries,
         vote_average,
         vote_count,
-        poster_path } = props.mediaItem
+        poster_path, 
+        } = props.mediaItem
     return (
         <div>
-            <h1>{title}</h1>
+            {name && <h1>{name}</h1>}
+            {title && <h1>{title}</h1>}
             <div className='detailItems'>
                 <div className='itemDetails'>
                     {overview && <p>{overview}</p>}
