@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
 import SearchBar from './SearchBar';
-import { connect } from 'react-redux'
 
 class SearchBarContainer extends Component {
+    state = { query: '' }
+    onSubmit = (event) => {
+        event.preventDefault()
+    }
+    onChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
     render() {
         return (
-            <SearchBar />
+            <SearchBar
+                onSubmit={this.onSubmit}
+                onChange={this.onChange}
+                values={this.state.query}
+                onClick={this.onClick} />
         )
     }
 }
-function mapStateToProps (state) {
-    return {
 
-    }
-}
-export default connect(mapStateToProps)(SearchBarContainer)
+export default SearchBarContainer

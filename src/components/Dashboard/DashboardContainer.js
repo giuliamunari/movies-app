@@ -3,7 +3,6 @@ import Carousel from './Carousel'
 import { connect } from 'react-redux'
 import { getPopularMovies, getPopularTv, getFamily, getDocumentaries } from '../../actions/movieLists'
 import Loader from '../Loader/Loader'
-import {Link} from 'react-router-dom'
 
 class DashboardContainer extends Component {
     componentDidMount() {
@@ -17,7 +16,6 @@ class DashboardContainer extends Component {
         return (
             <div className='container'>
                 <h1>Movies App</h1>
-                <Link to='/movie/462677'>link</Link>
                 {!this.props.media && <Loader />}
 
                 {this.props.media &&
