@@ -1,10 +1,12 @@
+/**
+ * component rendering the search bar
+ */
 import React, { Component } from 'react'
-import SearchBar from './SearchBar';
-import {connect} from 'react-redux'
+import SearchBar from './SearchBar'
+
 class SearchBarContainer extends Component {
     state = { type: 'movie', query: '', errorForm: '' }
     optionsMedia = ['movie', 'tv']
-
     onSubmit = (event) => {
         event.preventDefault()
         if (this.state.query !== '') {
@@ -36,4 +38,4 @@ class SearchBarContainer extends Component {
     }
 }
 
-export default connect()(SearchBarContainer)
+export default SearchBarContainer

@@ -1,3 +1,7 @@
+/**
+ * Actions to load lists of media
+ */
+
 import * as request from 'superagent'
 import { baseUrl, apiKey, languageUrl } from '../constants'
 import { errorAction } from './errorApi'
@@ -7,6 +11,7 @@ export const LOAD_DOCUMENTARIES_SUCCESS = 'LOAD_DOCUMENTARIES_SUCCESS'
 export const LOAD_FAMILY_SUCCESS = 'LOAD_FAMILY_SUCCESS'
 export const LOAD_TV_SUCCESS = 'LOAD_TV_SUCCESS'
 
+// to get all movie documentaries
 export function getDocumentaries() {
     const url = `${baseUrl}/discover/movie?api_key=${apiKey}&${languageUrl}&with_genres=99&sort_by=vote_average.desc&vote_count.gte=10`
     return async function (dispatch) {
@@ -24,6 +29,7 @@ export function getDocumentaries() {
     }
 }
 
+// to get movies under the family category
 export function getFamily() {
     const url = `${baseUrl}/discover/movie?api_key=${apiKey}&${languageUrl}&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=10`
     return async function (dispatch) {
@@ -41,6 +47,7 @@ export function getFamily() {
     }
 }
 
+// to get popular movies
 export function getPopularMovies() {
     const url = `${baseUrl}/movie/popular?api_key=${apiKey}&${languageUrl}`
     return async function (dispatch) {
@@ -58,6 +65,7 @@ export function getPopularMovies() {
     }
 }
 
+// to get popular tv shows
 export function getPopularTv() {
     const url = `${baseUrl}/tv/popular?api_key=${apiKey}&${languageUrl}`
     return async function (dispatch) {

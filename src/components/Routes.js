@@ -1,3 +1,6 @@
+/**
+ * component that collects all the routes 
+ */
 import React from 'react'
 import { Route } from 'react-router-dom'
 import DashboardContainer from './Dashboard/DashboardContainer';

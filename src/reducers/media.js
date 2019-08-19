@@ -1,3 +1,6 @@
+/**
+ * Reducer for all the actions used to load a specific media
+ */
 import { LOAD_MEDIA_SUCCESS } from '../actions/media'
 import { ERROR } from '../actions/errorApi'
 

@@ -1,3 +1,6 @@
+/**
+ * component rendering a hls video with vimond replay and shakaplayer 
+ */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Replay } from 'vimond-replay';
@@ -11,7 +14,7 @@ class VideoPlayerContainer extends Component {
     id = parseInt(this.props.match.params.id)
     type = this.props.match.params.type
     componentDidMount() {
-		window.muxjs = muxjs
+		window.muxjs = muxjs //this is needed to use mux.js for with shaka player
 		this.props.getMedia(this.type, this.id)
     }
     replayOptions = {

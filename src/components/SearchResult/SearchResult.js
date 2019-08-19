@@ -1,9 +1,12 @@
+/**
+ * component that renders the search results
+ */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { baseImgUrl } from '../../constants'
 export default function SearchResult(props) {
     return (
-        <div>
+        <div className='searchResults'>
             {props.data.map((item, index) =>
                 <div key={index}>
                     <Link to={`/detail/${props.type}/${item.id}`}>

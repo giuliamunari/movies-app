@@ -1,8 +1,20 @@
+/**
+ * component that renders a media in a carousel
+ */
 import React from 'react'
 import InfiniteCarousel from 'react-leaf-carousel'
 import { Link } from 'react-router-dom'
 import { baseImgUrl } from '../../constants'
 export default function Carousel(props) {
+    const renderCard = (item, index) => {
+        const mediaTitle = item.title ? item.title : item.name
+        return <div key={index}>
+            <Link to={`/detail/${props.type}/${item.id}`}>
+                <img src={`${baseImgUrl}${item.poster_path}`} alt={mediaTitle} />
+                <p>{mediaTitle}</p>
+            </Link>
+        </div>
+    }
     return (
         <div>
             <h2>{props.title}</h2>
@@ -35,7 +47,7 @@ export default function Carousel(props) {
                 responsive={true}
             >
                 {props.data.map((item, index) =>
-                    <div key={index}><Link to={`/detail/${props.type}/${item.id}`}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /><p>{item.title}</p></Link></div>
+                    renderCard(item, index)
                 )}
             </InfiniteCarousel>
         </div>

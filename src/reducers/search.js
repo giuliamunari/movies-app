@@ -1,5 +1,10 @@
+/**
+ * Reducer for the search functionality
+ */
+
 import { ERROR } from '../actions/errorApi'
 import { SEARCH_MEDIA_SUCCESS } from '../actions/searchResults'
+
 const initialState = {}
 
 export default function (state = initialState, action) {
