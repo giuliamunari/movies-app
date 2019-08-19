@@ -11,7 +11,6 @@ class DetailContainer extends Component {
         this.props.getMedia(this.type, this.id)
     }
     render() {
-        console.log(this.sta)
         return (
             <div className='container'>
                 {this.props.error &&
