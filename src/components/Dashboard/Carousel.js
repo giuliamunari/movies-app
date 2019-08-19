@@ -30,6 +30,9 @@ export default function Carousel(props) {
                 slidesToScroll={4}
                 slidesToShow={5}
                 scrollOnDevice={true}
+                lazyLoad={false}
+                autoCycle={false}
+                responsive={true}
             >
                 {props.data.map((item, index) =>
                     <div key={index}><Link to={`/${props.type}/${item.id}`}><img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} /></Link></div>
