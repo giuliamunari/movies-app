@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { search } from '../../actions/searchResults'
 class SearchResultContainer extends Component {
     query = this.props.match.params.query
+    type = this.props.match.params.type
     componentDidMount() {
         this.props.search(this.query)
     }

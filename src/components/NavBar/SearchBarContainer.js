@@ -2,9 +2,15 @@ import React, { Component } from 'react'
 import SearchBar from './SearchBar';
 
 class SearchBarContainer extends Component {
-    state = { query: '' }
+    state = {  type: 'movie', query: '' }
+    optionsMedia = ['movie', 'tv']
+    navigate = () => {
+        this.context.router.push(`/${this.state.type}/${this.state.query}`);
+    }
     onSubmit = (event) => {
         event.preventDefault()
+        this.setState({  type: '', query: '' })
+        this.navigate(`/${this.state.type}/${this.state.query}`)
     }
     onChange = (event) => {
         this.setState({
@@ -17,7 +23,8 @@ class SearchBarContainer extends Component {
                 onSubmit={this.onSubmit}
                 onChange={this.onChange}
                 values={this.state.query}
-                onClick={this.onClick} />
+                onClick={this.onClick}
+                options={this.optionsMedia} />
         )
     }
 }
