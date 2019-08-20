@@ -4,7 +4,6 @@ This project is an application that collects movies and plays videos.
 * [The API](#The-API)
 * [How to start](#How-to-start)
 * [Technologies used for this project](#Technologies-used-for-this-project)
-* [Contributors](#Contributors)
 
 ## The API
 This project uses content from [The Movie Data Base​ API](https://www.themoviedb.org/) version 3
