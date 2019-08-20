@@ -9,7 +9,7 @@ movies-app is an application that presents a searchable list of categorised movi
 This project relies on from [The Movie Data Base API](https://www.themoviedb.org/) (version 3) to get movies data.
 
 * To use the API you need to register and get an api_key [link](https://www.themoviedb.org/account/signup)
-* Once you have the api_key, create a `.env` file in the application directory and add your api_key as `REACT_APP_MOVIES_API_KEY=<the api_key here>`
+* Once you have the api_key, create a `.env` file in the application directory and add your api_key as `REACT_APP_MOVIES_API_KEY=<api_key>`
 
 ## How to start
 To start working on this project you can download or clone this repository, after you can:
