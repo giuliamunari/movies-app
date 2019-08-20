@@ -1,4 +1,4 @@
-This project is an application that collects movies and plays videos.
+This project is an application, based on React, that collects movies and plays videos.
 
 ## Table of content
 * [The API](#The-API)
