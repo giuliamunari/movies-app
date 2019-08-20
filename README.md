@@ -1,3 +1,4 @@
+[Preview Link](https://pacific-garden-33962.herokuapp.com/)
 movies-app is an application that presents a searchable list of categorised movies and plays videos.
 
 ## Table of content
