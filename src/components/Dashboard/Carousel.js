@@ -8,7 +8,7 @@ import { baseImgUrl } from '../../constants'
 export default function Carousel(props) {
     const renderCard = (item, index) => {
         const mediaTitle = item.title ? item.title : item.name
-        return <div key={index}>
+        return <div key={index} className='cards'>
             <Link to={`/detail/${props.type}/${item.id}`}>
                 <img src={`${baseImgUrl}${item.poster_path}`} alt={mediaTitle} />
                 <p>{mediaTitle}</p>

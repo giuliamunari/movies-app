@@ -8,7 +8,7 @@ export default function SearchResult(props) {
     return (
         <div className='searchResults'>
             {props.data.map((item, index) =>
-                <div key={index}>
+                <div key={index} className='cards'>
                     <Link to={`/detail/${props.type}/${item.id}`}>
                         <img src={`${baseImgUrl}${item.poster_path}`} alt={item.title} />
                         <p>{item.title}</p>

@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react'
 import SearchBar from './SearchBar'
+import Logo from '../Logo/Logo'
 
 class SearchBarContainer extends Component {
     state = { type: 'movie', query: '', errorForm: '' }
@@ -25,7 +26,9 @@ class SearchBarContainer extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='nav'>
+                <div className='container'>
+                <Logo />
                 <SearchBar
                     onSubmit={this.onSubmit}
                     onChange={this.onChange}
@@ -33,6 +36,7 @@ class SearchBarContainer extends Component {
                     onClick={this.onClick}
                     options={this.optionsMedia} />
                 <p>{this.state.errorForm}</p>
+                </div>
             </div>
         )
     }
