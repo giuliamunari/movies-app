@@ -22,7 +22,7 @@ To start working on this project you can download or clone this repository, afte
 * React with `create-react-app`
 * `redux` and `react-redux` to set up a redux store and dispatch actions
 * `react-router` and `react-router-dom` to use routes in react and have dom elements that work with them
-* `superagent` to fetch data from the database 
+* `superagent` to fetch data from the API 
 * `redux-thunk` to dispatch actions for the redux store
 * `react-leaf-carousel` to show carousels in homepage [Documentation](https://github.com/leaffm/react-infinite-carousel#readme).
 * `vimond-replay` to load HLS videos with `shaka-player`[Documentation](https://github.com/vimond/replay)
