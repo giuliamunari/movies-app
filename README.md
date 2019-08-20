@@ -4,6 +4,7 @@ movies-app is an application that presents a searchable list of categorised movi
 * [API Prerequisites](#API-Prerequisites)
 * [How to start](#How-to-start)
 * [Technologies used for this project](#Technologies-used-for-this-project)
+* [Known issues](#Known-issues)
 
 ## API Prerequisite
 This project relies on from [The Movie Data Base API](https://www.themoviedb.org/) (version 3) to get movies data.
@@ -29,5 +30,5 @@ To start working on this project you can download or clone this repository, afte
 * `mux.js` to improve the loading of HLS videos [Homepage](https://github.com/videojs/mux.js/)
 
 ## Known issues
-* (https://github.com/Astrid88/movies-app/issues/21)
-* (https://github.com/Astrid88/movies-app/issues/20)
+* https://github.com/Astrid88/movies-app/issues/21
+* https://github.com/Astrid88/movies-app/issues/20
