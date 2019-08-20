@@ -27,3 +27,7 @@ To start working on this project you can download or clone this repository, afte
 * `vimond-replay` to load HLS videos with `shaka-player`[Documentation](https://github.com/vimond/replay)
 * `shaka-player` to load HLS videos [Documentation](https://github.com/google/shaka-player)
 * `mux.js` to improve the loading of HLS videos [Homepage](https://github.com/videojs/mux.js/)
+
+## Known issues
+* (https://github.com/Astrid88/movies-app/issues/21)
+* (https://github.com/Astrid88/movies-app/issues/20)
