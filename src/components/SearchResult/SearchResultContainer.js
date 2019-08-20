@@ -21,7 +21,7 @@ class SearchResultContainer extends Component {
             <div className='container'>
                 {!this.props.searchResults && <Loader />}
                 {(this.props.searchResults && this.props.searchResults.total_results === 0) &&
-                    <h1>No items found for {this.query}</h1>
+                    <h1>No items found for {this.props.match.params.query}</h1>
                 }
                 {(this.props.searchResults && this.props.searchResults.total_results > 0) &&
                     <SearchResult data={this.props.searchResults.results} type={this.type} query={this.query} />
