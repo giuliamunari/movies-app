@@ -17,7 +17,7 @@ To use the API you need to register and get an ​api_key​ [https://www.themov
 To start working on this project you can download or clone this repository, after you can:
 
 1. Run `npm install` on your terminal to install all the dependendencies
-2. Create in the app directory a .env file and add your api_key as `REACT_APP_MOVIES_API_KEY=<the api_key here>`
+2. Create in the app directory a `.env` file and add your api_key as `REACT_APP_MOVIES_API_KEY=<the api_key here>`
 3. Run `npm start` to get a preview of the front end
 
 ## Technologies used for this project
