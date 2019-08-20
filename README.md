@@ -5,7 +5,7 @@ movies-app is an application that presents a searchable list of categorised movi
 * [How to start](#How-to-start)
 * [Technologies used for this project](#Technologies-used-for-this-project)
 
-## API Prerequisites
+## API Prerequisite
 This project relies on from [The Movie Data Base API](https://www.themoviedb.org/) (version 3) to get movies data.
 
 * To use the API you need to register and get an api_key [link](https://www.themoviedb.org/account/signup)
