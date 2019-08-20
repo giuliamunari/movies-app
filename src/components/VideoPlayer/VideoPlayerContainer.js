@@ -30,7 +30,7 @@ class VideoPlayerContainer extends Component {
     };
     render() {
         return (
-            <div>
+            <div className='container'>
 				{this.props.mediaItem && 
                 <h1>{this.props.mediaItem.title}</h1>}
                 

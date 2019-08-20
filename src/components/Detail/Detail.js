@@ -23,8 +23,14 @@ export default function Detail(props) {
             {name && <h1>{name}</h1>}
             {title && <h1>{title}</h1>}
             <div className='detailItems'>
+            <div className='itemImage'>
+                    <img src={`${baseImgUrl}${poster_path}`} alt={title} />
+                </div>
                 <div className='itemDetails'>
                     {overview && <p>{overview}</p>}
+                   
+                    <Link to={`/detail/${props.type}/${id}/player`} className='button'>Play now</Link>
+                       
                     <h3>Details</h3>
                     <ul className='metadata'>
                         {(vote_average && vote_count) &&
@@ -57,14 +63,10 @@ export default function Detail(props) {
                                 <p>{production_countries.map((country, index) => <span key={index}>{country.name + ' '}</span>)}</p>
                             </li>
                         }
-                        <li>
-                            <Link to={`/detail/${props.type}/${id}/player`} className='button'>Play now</Link>
-                        </li>
+                        
                     </ul>
                 </div>
-                <div className='itemImage'>
-                    <img src={`${baseImgUrl}${poster_path}`} alt={title} />
-                </div>
+                
             </div>
         </div>
     )

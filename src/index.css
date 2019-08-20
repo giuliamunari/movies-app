@@ -33,7 +33,8 @@ body {
 }
 .container h2,
 .container h1,
-.container h3 {
+.container h3,
+.container h4 {
   margin: 10px auto;
   color: #2ecc71
 }
@@ -54,9 +55,9 @@ body {
 .header {
   padding-top: 1px;
   padding-bottom: 150px;
-  background-image: url('./images/background-header.jpg');
+  background-image: url('./images/background-header.jpeg');
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: left top;
   background-attachment: fixed;
   padding-top: 1px;
   text-align: center;
@@ -103,6 +104,15 @@ body {
   }
 }
 
+@media screen and (max-width: 669px) {
+  input.input,
+  select.input{
+    margin-bottom: 5px;
+    margin-top:5px;
+    max-width:100px
+  }
+}
+
 input.input,
 select.input{
   height: 40px; 
@@ -115,7 +125,7 @@ select.input{
   background:rgba(39, 174, 96,1.0);
   border-radius:4px
   }
-select.input{padding:20px}
+  select.input{padding:none}
 
 input.input::placeholder{
   color:white
@@ -131,3 +141,61 @@ input.input::placeholder{
   padding-top:10px;
   }
 /*----- details page ----*/
+
+.detailItems:after{
+  display:block;
+  clear:both;
+}
+
+  ul.metadata{
+    margin: 20px 0;
+  }
+  ul.metadata li{
+    margin-bottom: 20px
+  }
+  .itemImage{
+    display:block;
+    margin-bottom:20px;
+    width:auto;
+    max-width:100%
+  }
+  .itemDetails .button{
+    margin: 20px 0
+  }
+
+@media screen and (min-width: 670px) {
+  .itemDetails{
+    float:left;
+    width:50%;
+    padding-right:30px;
+  }
+  .itemImage{
+    float:right;
+    max-width:50%
+  }
+  .itemImage img{
+    width:100%;
+    max-width:100%;
+    margin: 0
+  }
+}
+
+/*----- search results page ----*/
+
+.searchResults{
+   display: flex;
+    flex-wrap: wrap;
+    align-items: stretch center;
+    flex-direction: row;
+}
+.searchResults .cards{
+  margin: 10px;
+}
+.searchResults .cards a{
+  display:block;
+  max-width:100%
+}
+.searchResults .cards img{
+  height: 500px;
+  max-width:100%
+}
