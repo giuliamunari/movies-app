@@ -1,5 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This project is an application that collects movies and plays videos.
 
 ## Table of content
 * [The API](#The-API)
