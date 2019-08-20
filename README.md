@@ -8,9 +8,9 @@ This project is an application, based on React, that collects movies and plays v
 ## The API
 This project uses content from [The Movie Data Base​ API](https://www.themoviedb.org/) version 3
 API documentation:
-Overview: [​https://www.themoviedb.org/documentation/api​]
-Getting started: [​https://developers.themoviedb.org/3/getting-started/introduction​]
-To use the API you need to register and get an ​api_key​ [https://www.themoviedb.org/account/signup]
+* Overview: [​https://www.themoviedb.org/documentation/api​]
+* Getting started: [​https://developers.themoviedb.org/3/getting-started/introduction​]
+* To use the API you need to register and get an ​api_key​ [https://www.themoviedb.org/account/signup]
 
 ## How to start
 To start working on this project you can download or clone this repository, after you can:
