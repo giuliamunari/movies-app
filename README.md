@@ -15,8 +15,7 @@ This project relies on from [The Movie Data Base API](https://www.themoviedb.org
 To start working on this project you can download or clone this repository, after you can:
 
 1. Run `npm install` on your terminal to install all the dependendencies
-2. Create a `.env` file in the application directory and add your api_key as `REACT_APP_MOVIES_API_KEY=<the api_key here>`, this is an important step in order to get data from the API in the app
-3. Run `npm start` to get a preview of the front end
+2. Run `npm start` to get a preview of the front end
 
 ## Technologies used for this project
 * React with `create-react-app`
